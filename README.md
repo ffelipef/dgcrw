@@ -1,7 +1,7 @@
 # dungeon_crawler
 Jogo dungeon crawler em C
 Integrantes: Felipe de Freitas da Silva e Fernando Richard de Sena de Souza
-História: nosso protragonista está perdido em uma sala, ele é um rato de laboratorio e para sair do laboratório deve sair de 3 salas, duas delas haverão inimigos que tentarão pegá-lo e ele deve escapar não apenas deles mas tambem das grades de choque ou espinhos, ele tem 3 vidas e caso toque mais de três vezes em um desses elementos ele morre. Porém ao interagir com o soro da vida (O), o personagem recupera 1 de vida, sua vida também é renovada a cada passagem de sala.
+História: nosso protagonista está perdido em uma sala, ele é um rato de laboratorio e para sair do laboratório deve sair de 3 salas, duas delas haverão inimigos que tentarão pegá-lo e ele deve escapar não apenas deles mas tambem das grades de choque ou espinhos, ele tem 3 vidas e caso toque mais de três vezes em um desses elementos ele morre. Porém ao interagir com o soro da vida (O), o personagem recupera 1 de vida, sua vida também é renovada a cada passagem de sala.
 TUTORIAL/COMO JOGAR:
 Neste jogo de aventura e puzzle, seu objetivo é superar três desafiantes fases. Aqui está o que você precisa saber:
 
