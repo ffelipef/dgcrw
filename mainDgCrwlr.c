@@ -6,7 +6,7 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-// FunÁ„o para ler o input do teclado
+// Fun√ß√£o para ler o input do teclado
 char lerTecla() {
     char tecla;
     tecla = getch(); // Ler a tecla pressionada
@@ -43,8 +43,8 @@ int tutorial(){
 	printf("Neste jogo de aventura e puzzle, seu objetivo eh superar tres desafiantes fases. Aqui esta o que voce precisa saber:\n\n");
 	printf("1- Movimentacao: Use as teclas W, A, S e D para mover seu personagem pelo cenario e caso queira sair do jogo use a tecla 'Q'\n");
 	printf("2- Interatividade: Ao chegar em um objeto que possa ser interagido, pressione a tecla I. Isso inclui pegar chaves (@), pressionar botoes (O) e utilizar teletransportes (>).\n");
-	printf("3- Objetivos: Em cada fase, seu objetivo eh encontrar a chave (@) para abrir a porta (D) e avanÁar para a proxima fase. A porta se transforma em (=) quando voce interage com a chave.\n");
-	printf("4- Perigos: Esteja atento aos espinhos (#) e aos monstros (X e V). Se tocar em um espinho, a fase sera reiniciada. Se um monstro te alcanÁar, o mesmo acontecera.\n");
+	printf("3- Objetivos: Em cada fase, seu objetivo eh encontrar a chave (@) para abrir a porta (D) e avan√ßar para a proxima fase. A porta se transforma em (=) quando voce interage com a chave.\n");
+	printf("4- Perigos: Esteja atento aos espinhos (#) e aos monstros (X e V). Se tocar em um espinho, a fase sera reiniciada. Se um monstro te alcan√ßar, o mesmo acontecera.\n");
 	printf("5- Teletransportes: Use os teletransportes (>) para se movimentar rapidamente pelo cenario. Eles sempre aparecem em pares.\n");
 	printf("6- Reinicio: Se falhar tres vezes em uma fase, o jogo retornara ao menu principal.\n");
 	printf("Agora que voce conhece as regras basicas, prepare-se para uma emocionante jornada! Boa sorte!\n\n");
@@ -110,12 +110,12 @@ int fim(){
 
 char fase3(){
 	int monstro;
-	int posX = 1; // PosiÁ„o inicial do jogador
+	int posX = 1; // Posi√ß√£o inicial do jogador
 	int vida = 3;
 	int k;
-	// Inicializando a semente para gerar n˙meros aleatÛrios
+	// Inicializando a semente para gerar n√∫meros aleat√≥rios
     srand(time(NULL));
-    // PosiÁ„o inicial do monstro
+    // Posi√ß√£o inicial do monstro
     int mpx = 38;
     int mpy = 2;
 	int posY = 1;
@@ -175,7 +175,7 @@ char fase3(){
     while (1) {
 	// Limpar a tela e exibir a nova posicao do jogador
 	system("cls"); // Para Windows
-		// Movimento do monstro em direÁ„o ao jogador
+		// Movimento do monstro em dire√ß√£o ao jogador
 		if (posX < mpx && mapa3[mpy][mpx - 1] != '*') {
     		mpx--;
 		} else if (posX > mpx && mapa3[mpy][mpx + 1] != '*') {
@@ -201,7 +201,7 @@ char fase3(){
             printf("\n");
         }
         
-        // Verificar colis„o com o monstro ou espinhos
+        // Verificar colis√£o com o monstro ou espinhos
         if (mapa3[posY][posX] == 'V' || mapa3[posY][posX] == '#') {
     		vida--;
    			if (vida == 0) {
@@ -211,9 +211,9 @@ char fase3(){
     		}
    			mpx = 38;
     		mpy = 2;
-    		posX = 1; // Reiniciar posiÁ„o do jogador
+    		posX = 1; // Reiniciar posi√ß√£o do jogador
     		posY = 1;
-    		printf("VocÍ perdeu uma vida! Vidas restantes: %d\n", vida);
+    		printf("Voc√™ perdeu uma vida! Vidas restantes: %d\n", vida);
     		sleep(2);
 		}
         
@@ -245,10 +245,11 @@ char fase3(){
 	        case 'q': // Sair do loop quando 'q' for pressionado
 	            printf("Saindo do jogo...\n");
 	            return 0;
-	        case 'i': // Verificar se o jogador est· sobre "@" e "D"
+	        case 'i': // Verificar se o jogador est√° sobre "@" e "D"
 	            if (mapa3[posY][posX] == '@') {
 	                mapa3[posY][posX] = ' ';
 	                mapa3[18][18] = '=';//Alteracao do sprite da porta
+			fim();
 					
 					}
 				if (mapa3[posY][posX] == 'O') {
@@ -260,13 +261,13 @@ char fase3(){
 						}	
 				// Verificar teletransporte
 	        	if (mapa3[posY][posX] == '>') {
-                    // Procurar a prÛxima posiÁ„o de ">"
+                    // Procurar a pr√≥xima posi√ß√£o de ">"
                     int novaPosX = posX;
                     int novaPosY = posY;
                     for (i = 0; i < 40; i++) {
                         for (j = 0; j < 40; j++) {
                             if (mapa3[i][j] == '>' && (i != posY || j != posX)) {
-                                // Teletransportar o jogador para a prÛxima posiÁ„o de ">"
+                                // Teletransportar o jogador para a pr√≥xima posi√ß√£o de ">"
                                 novaPosX = j;
                                 novaPosY = i;
                                 break;
@@ -291,12 +292,12 @@ char fase3(){
 
 char fase2(){
 	int monstro;
-	int posX = 1; // PosiÁ„o inicial do jogador
+	int posX = 1; // Posi√ß√£o inicial do jogador
 	int vida = 3;
 	int k;
-	// Inicializando a semente para gerar n˙meros aleatÛrios
+	// Inicializando a semente para gerar n√∫meros aleat√≥rios
     srand(time(NULL));
-    // PosiÁ„o inicial do monstro
+    // Posi√ß√£o inicial do monstro
     int mpx = 5;
     int mpy = 5;
 	int posY = 1;
@@ -332,13 +333,13 @@ char fase2(){
             }
 		printf("\n");
         }
-    // Colocando o sprite do monstro na posiÁ„o inicial
+    // Colocando o sprite do monstro na posi√ß√£o inicial
     	mapa2[mpy][mpx] = 'X';
 
     while (1) {
 	// Limpar a tela e exibir a nova posicao do jogador
 	system("cls"); // Para Windows
-	//posiÁao atualizada do monstro
+	//posi√ßao atualizada do monstro
 		monstro = rand()%4;
         if(monstro == 0){
         	mpy--;
@@ -393,7 +394,7 @@ char fase2(){
 	        case 'q': // Sair do loop quando 'q' for pressionado
 	            printf("Saindo do jogo...\n");
 	            return 0;
-	        case 'i': // Verificar se o jogador est· sobre "@" e "D"
+	        case 'i': // Verificar se o jogador est√° sobre "@" e "D"
 	            if (mapa2[posY][posX] == '@') {
 	                mapa2[posY][posX] = ' ';
 	                mapa2[18][18] = '=';//Alteracao do sprite da porta
@@ -413,7 +414,7 @@ char fase2(){
 	            sleep(1);
 	            break;
 	    }
-	    // Verificar colis„o com o monstro ou espinhos
+	    // Verificar colis√£o com o monstro ou espinhos
         if (mapa2[posY][posX] == 'X' || mapa2[posY][posX] == '#') {
             vida--;
             if (vida == 0) {
@@ -421,7 +422,7 @@ char fase2(){
                 gameover();
                 return 0;
             }
-            posX = 1; // Reiniciar posiÁ„o do jogador
+            posX = 1; // Reiniciar posi√ß√£o do jogador
             posY = 1;
             printf("Voce perdeu uma vida! Vidas restantes: %d\n", vida);
             sleep(2);
@@ -436,7 +437,7 @@ char fase2(){
 int main(int argc, char *argv[]) {
 	while(1){
 		int menu = inter();
-		int posX = 1; // PosiÁ„o inicial do jogador
+		int posX = 1; // Posi√ß√£o inicial do jogador
 	    int posY = 1;
 		int i;
 		int j;
@@ -457,7 +458,7 @@ int main(int argc, char *argv[]) {
 		if(menu==1){
 			printf("INICIANDO JOGO\n");
 			sleep(2); //Sleep: o proximo comando so vai ser executado (x) segundos depois
-			printf("Use as teclas W, A, S e D para mover seu personagem pelo cen·rio. Use a tecla 'q' quando quiser sair do jogo");
+			printf("Use as teclas W, A, S e D para mover seu personagem pelo cen√°rio. Use a tecla 'q' quando quiser sair do jogo");
 			sleep(2);
 			
 	    while (1) {
@@ -504,7 +505,7 @@ int main(int argc, char *argv[]) {
 	            case 'q': // Sair do loop quando 'q' for pressionado
 	                printf("Saindo do jogo...\n");
 	                return 0;
-	            case 'i': // Verificar se o jogador est· sobre "@" e "O"
+	            case 'i': // Verificar se o jogador est√° sobre "@" e "O"
 	                if (mapa[posY][posX] == '@') {
 	                    mapa[posY][posX] = ' ';
 	                    mapa[1][1] = '=';//Alteracao do sprite da porta
